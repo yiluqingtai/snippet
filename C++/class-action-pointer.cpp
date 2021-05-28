@@ -29,7 +29,7 @@ private:
     int *use; //用来记录有多少个对象共享*ps的成员
 };
 
-HasPtr& HasPtr::operator=(const HasPtr &rhs) {
+HasPtr& HasPtr(const HasPtr &rhs) {
     auto newp = new string(*rhs.ps); //拷贝底层string
     delete ps;  // 释放旧内存
     ps = newp;  // 从右侧运算对象拷贝数据到本对象
