@@ -51,7 +51,7 @@ function handleConnection(event) {
 
 
 // 1、获取本地流
-navigator.mediaDevices.getUserMedia(mediaStreamConstraints).then(gotLocalStream).get(handleLocalStreamError);
+navigator.mediaDevices.getUserMedia(mediaStreamConstraints).then(gotLocalStream).catch(handleLocalStreamError);
 
 // 2、添加本地流到对等连接
 localPeerConnection.addStream(localStream);
