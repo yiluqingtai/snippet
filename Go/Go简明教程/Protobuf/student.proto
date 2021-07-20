@@ -1,0 +1,22 @@
+syntax = "proto3";
+package main;
+option go_package = "./;main";
+
+// this is a comment
+message Student {
+  string name = 1;
+  bool male = 2;
+  repeated int32 scores = 3;
+}
+
+service SearchService {
+  rpc Search (SearchRequest) returns (SearchResponse);
+}
+
+message SearchRequest {
+  string field = 1;
+}
+
+message SearchResponse {
+  string response = 1;
+}
